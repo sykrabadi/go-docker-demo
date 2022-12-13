@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN go build -o go-docker
+RUN go build -o go-demo-backend
 
 EXPOSE 8080
 
-CMD ./go-docker
+CMD ./go-demo-backend

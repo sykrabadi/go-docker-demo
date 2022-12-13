@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6.0.2
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    networks:
+      - docker-demo
+  app-backend:
+    build: ./app-backend
+    ports:
+      - 8080:8080
+    depends_on: 
+      - mongo
+    networks:
+      - docker-demo
+
+networks:
+  docker-demo:
